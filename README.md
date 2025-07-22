@@ -49,7 +49,7 @@ To run this project locally, follow these steps:
 
 Clone the repository:
 
-git clone [https://github.com/your-username/employee-salary-prediction.git](https://github.com/Xema7/Employee-Salary-Prediction-Ravi-Asopa.git)
+git clone https://github.com/Xema7/Employee-Salary-Prediction-Ravi-Asopa.git
 
 Navigate to the project directory:
 
