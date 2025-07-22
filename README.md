@@ -1,110 +1,78 @@
-# 🕴️ Employee Salary Prediction
+Employee Salary Prediction Web App
+This project is a machine learning application that predicts employee salaries based on various professional factors. The project includes a data analysis and model training pipeline in a Jupyter Notebook and a user-friendly web application built with Streamlit for interactive predictions and data exploration.
 
-An interactive web application that predicts employee salaries using a machine learning model. This tool provides data-driven insights for both employees and employers in the tech industry.
+🚀 Features
+Salary Prediction: Predicts employee salaries in USD based on experience level, employment type, job title, company location, and company size.
 
-***
+Currency Conversion: Converts the predicted USD salary to other currencies using real-time exchange rates.
 
-## 🌟 Overview
+Interactive Visualizations: Explore salary data through various charts and plots.
 
-This project analyzes a dataset of technology salaries to build a predictive model. The core of the project is a Streamlit application that allows users to input job-related details and receive an estimated salary in return. The application also provides visualizations to explore salary trends across different roles, experience levels, and locations.
+User-Friendly Interface: A clean and intuitive web interface for easy interaction.
 
-## ✨ Key Features
+📊 Dataset
+The project uses the salary.csv dataset, which contains information about salaries for various tech roles. The key features used for prediction are:
 
--   **🤖 ML-Powered Predictions:** Utilizes a Gradient Boosting model to predict salaries with high accuracy.
--   **💵 Currency Converter:** Instantly convert the predicted USD salary to dozens of world currencies via a live API.
--   **📊 Interactive Data Analysis:** Dynamically generated plots to visualize salary distributions by job title and company location.
--   **📈 Trend Exploration:** Sidebar visualizations offer a quick look at salary trends based on experience, company size, and more.
--   **🎨 Modern UI:** A clean, user-friendly interface built with Streamlit, optimized for both desktop and mobile use.
+experience_level
 
-***
+employment_type
 
-## ⚙️ How It Works
+job_title
 
-The project follows a standard machine learning workflow:
+company_location
 
-1.  **Data Loading & Preprocessing:** The `salary.csv` dataset is loaded. Unnecessary columns are dropped, and categorical abbreviations (e.g., 'FT' for 'Full-Time') are mapped to more descriptive terms.
-2.  **Feature Encoding:** All categorical features (like `job_title`, `experience_level`, etc.) are converted into numerical format using `LabelEncoder`.
-3.  **Model Training:** The data is split into training and testing sets. Five different regression models are trained and evaluated:
-    -   Linear Regression
-    -   Random Forest Regressor
-    -   **Gradient Boosting Regressor (Best Performance)**
-    -   Decision Tree Regressor
-    -   SVR
-4.  **Model Persistence:** The best model (Gradient Boosting) is saved to a file (`best_pipeline.pkl`) using `joblib` for later use in the web app.
-5.  **Web Application:** The `app.py` script loads the saved model and creates a Streamlit interface where users can input data and see the model's predictions and analyses in real-time.
+company_size
 
-***
+🛠️ Methodology
+Data Cleaning: The initial dataset was cleaned to handle missing values and format inconsistencies.
 
-## 📂 Project Structure
+Feature Engineering: Categorical features were encoded into numerical values suitable for machine learning models.
 
+Model Training: Several regression models were trained and evaluated, including:
 
-.
-├── 📄 app.py                   # Main Streamlit application script
-├── 📓 employee salary prediction.ipynb # Jupyter Notebook for analysis and model training
-├── 💾 best_pipeline.pkl        # Saved machine learning model
-├── 📝 salary.csv               # The raw dataset
-├── 📋 cleaned_salary_data.csv  # Processed data used by the app
-├── 📜 requirements.txt         # Python dependencies
-└── 📄 README.md                # This file
+Linear Regression
 
+Random Forest Regressor
 
-***
+Gradient Boosting Regressor
 
-## 🚀 Getting Started
+Decision Tree Regressor
 
-Follow these instructions to set up and run the project on your local machine.
+Support Vector Regressor (SVR)
 
-### Prerequisites
+Model Selection: The Gradient Boosting Regressor was selected as the best-performing model based on the Mean Absolute Error (MAE).
 
--   Python 3.9 or higher
--   `pip` package manager
+Deployment: The trained model was saved and integrated into a Streamlit web application for easy use.
 
-### Installation
+⚙️ Installation
+To run this project locally, follow these steps:
 
-1.  **Clone the repository to your local machine:**
-    ```bash
-    git clone [https://github.com/your-username/employee-salary-prediction.git](https://github.com/your-username/employee-salary-prediction.git)
-    cd employee-salary-prediction
-    ```
+Clone the repository:
 
-2.  **Create and activate a virtual environment (recommended):**
-    ```bash
-    # For Windows
-    python -m venv venv
-    .\venv\Scripts\activate
+git clone [https://github.com/your-username/employee-salary-prediction.git](https://github.com/your-username/employee-salary-prediction.git)
 
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+Navigate to the project directory:
 
-3.  **Install the required libraries:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+cd employee-salary-prediction
 
-### Running the Application
+Install the required dependencies:
 
-1.  **Launch the Streamlit app from your terminal:**
-    ```bash
-    streamlit run app.py
-    ```
-2.  Open your web browser and navigate to the local URL provided (usually `http://localhost:8501`).
+pip install -r requirements.txt
 
-***
+▶️ Usage
+To run the Streamlit web application, use the following command in your terminal:
 
-## 🤝 Contributing
+streamlit run app.py
 
-Contributions are welcome! If you have suggestions for improvements or want to add new features, please feel free to:
+💻 Technologies Used
+Python: The core programming language.
 
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
+Pandas: For data manipulation and analysis.
 
-***
+Scikit-learn: For machine learning model training and evaluation.
 
-## 📄 License
+Streamlit: To create the interactive web application.
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Matplotlib & Seaborn: For data visualization.
+
+Jupyter Notebook: For data exploration and model development.
